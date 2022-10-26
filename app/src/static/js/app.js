@@ -89,6 +89,7 @@ function AddItemForm({ onNewItem }) {
             });
     };
 
+    // Submit button edited
     return (
         <Form onSubmit={submitNewItem}>
             <InputGroup className="mb-3">
