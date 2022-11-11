@@ -72,6 +72,7 @@ function AddItemForm({ onNewItem }) {
 
     const [newItem, setNewItem] = React.useState('');
     const [submitting, setSubmitting] = React.useState(false);
+    const [resetting, setResetting] = React.useState(true);
 
     const submitNewItem = e => {
         e.preventDefault();
@@ -107,7 +108,16 @@ function AddItemForm({ onNewItem }) {
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
-                        {submitting ? 'Adding...' : 'Add Item'}
+                        {submitting ? 'Adding...' : 'Add'}
+                    </Button>
+
+                    <Button
+                        type="reset"
+                        variant="success"
+                        disabled={!newItem.length}
+                        className={submitting ? 'disabled' : ''}
+                    >
+                        {submitting ? 'Cleared...' : 'Clear All'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
